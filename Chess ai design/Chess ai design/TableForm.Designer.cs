@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableForm));
+            this.BoardPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // BoardPanel
+            // 
+            this.BoardPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoardPanel.BackgroundImage")));
+            this.BoardPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BoardPanel.Location = new System.Drawing.Point(197, 26);
+            this.BoardPanel.Name = "BoardPanel";
+            this.BoardPanel.Size = new System.Drawing.Size(400, 400);
+            this.BoardPanel.TabIndex = 0;
             // 
             // TableForm
             // 
@@ -36,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BoardPanel);
             this.Name = "TableForm";
             this.Text = "TableForm";
             this.ResumeLayout(false);
@@ -43,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel BoardPanel;
     }
 }

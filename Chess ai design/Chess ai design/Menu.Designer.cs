@@ -1,6 +1,6 @@
 ﻿namespace Chess_ai_design
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.

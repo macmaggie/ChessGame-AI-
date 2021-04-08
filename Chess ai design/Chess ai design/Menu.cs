@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace Chess_ai_design
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
 
         private void NewGButton_Click(object sender, EventArgs e)
         {
+            var tableform = new TableForm();
+            tableform.Show();
             //open Table form and close the previous form
             //load from the new game code 
         }

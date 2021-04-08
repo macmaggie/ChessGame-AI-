@@ -16,7 +16,7 @@ namespace Chess_ai_design
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Menu());
         }
         public static void Decompress(string Contents, ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard)
         {
@@ -29,7 +29,7 @@ namespace Chess_ai_design
                     n++;
                     x = 0;
                 }
-                LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
+                //LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
                 n = n + 3;
             }  
         }
@@ -40,7 +40,7 @@ namespace Chess_ai_design
 
         public static void LoadPieces()
         {
-            ChessBoard[x, y].BackgroundImageLayout = System.Windows.ImageLayout.Stretch;
+            //ChessBoard[x, y].BackgroundImageLayout = System.Windows.ImageLayout.Stretch;
         
         }
         public static void ShowMoves()
