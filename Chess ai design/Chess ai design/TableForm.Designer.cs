@@ -30,16 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableForm));
             this.BoardPanel = new System.Windows.Forms.Panel();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BoardPanel
             // 
             this.BoardPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoardPanel.BackgroundImage")));
             this.BoardPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BoardPanel.Location = new System.Drawing.Point(197, 26);
+            this.BoardPanel.Location = new System.Drawing.Point(200, 12);
             this.BoardPanel.Name = "BoardPanel";
             this.BoardPanel.Size = new System.Drawing.Size(400, 400);
             this.BoardPanel.TabIndex = 0;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(362, 418);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtn.TabIndex = 0;
+            this.SaveBtn.Text = "Save Game";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // TableForm
             // 
@@ -47,6 +58,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.BoardPanel);
             this.Name = "TableForm";
             this.Text = "TableForm";
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Panel BoardPanel;
+        private System.Windows.Forms.Button SaveBtn;
     }
 }

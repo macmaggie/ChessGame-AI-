@@ -14,7 +14,7 @@ namespace Chess_ai_design
     {
         public int NumClick = 0;
         public Button[,] ChessBoard = new Button[8, 8];
-        //public ChessPiece[,] ChessPieces = new ChessPiece[8, 8];
+        public ChessPiece[,] ChessPieces = new ChessPiece[8, 8];
         //public List<ChessPiece>[] DeafeatedWhite = new List<ChessPiece>[16];
         //public List<ChessPiece>[] DeafeatedBlack = new List<ChessPiece>[16];
         public TableForm()
@@ -40,6 +40,22 @@ namespace Chess_ai_design
             //Program.Decompress();
         }
         public void ClickButton(Object sender, System.EventArgs e)
+        { 
+
+        }
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            string Contents = null;
+            string Name = null;
+            NameSave NameSave = new NameSave();
+            NameSave.Show();// open namesave form
+            //somewhow get the var from namesaveform OR put the rest of this code into the NameSave snippet
+            NameSave.Close();//close namesave form
+            Program.Compress(ref Contents, Chesspieces);
+            Program.SaveFile(Contents, Name);
+            TableForm.close();//closes the Table form once it's saved
+        }
+        public void UpdateDefeatedList()
         { }
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess_ai_design
 {
-    class ChessPiece
+    class Bishop:ChessPiece
     {
-
     }
 }
