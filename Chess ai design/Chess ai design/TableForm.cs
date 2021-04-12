@@ -37,11 +37,23 @@ namespace Chess_ai_design
                     BoardPanel.Controls.Add(ChessBoard[x, y]);
                 }
             }
-            //Program.Decompress();
+            //Program.Decompress(Contents, ref ChessPieces, ref ChessBoard);//Loads objects + pictures
         }
         public void ClickButton(Object sender, System.EventArgs e)
-        { 
-
+        {
+            string Location = ((Button)sender).Name; // gets the position of button that was pressed
+            Console.WriteLine(NumClick); //----this is for debugging purposes---//
+            if (NumClick == 0) //selection click 
+            {
+                Program.PositionOne = Location;
+                Program.ShowMoves(ref ChessPieces, ref ChessBoard, ref NumClick);
+            }
+            else if (NumClick == 1) //moing click if the squares choosen are valid
+            {
+                Program.PositionTwo = Location;//get the square you want to move to
+                Program
+                    //----@ 2:23 in Vod ending in "1044"----//
+            }
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {

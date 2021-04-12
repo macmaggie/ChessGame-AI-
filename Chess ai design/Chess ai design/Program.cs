@@ -43,9 +43,30 @@ namespace Chess_ai_design
             //ChessBoard[x, y].BackgroundImageLayout = System.Windows.ImageLayout.Stretch;
         
         }
-        public static void ShowMoves()
-        { }
+        //these are set public because the "show moves" subroutine isnt connected with the "moves" subroutine. They are accessed by clicking a button
+        public static string PositionOne;//intial square of piece
+        public static string PositionTwo;//the square the player wants to move to
+        public static int x;
+        public static int y;
+        public static void ShowMoves(ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, ref int NumClick)
+        {
+            x = Convert.ToInt32(PositionOne.Substring(0, 1));
+            y = Convert.ToInt32(PositionOne.Substring(1, 1));
+            if (ChessPieces[x, y] != null) //this will cause the player to pick a new square if they pressed on a square which is empty
+            {
+                ChessPieces[x, y].ColorButton(ref x, ref y, ref ChessBoard, ref ChessPieces);
+                NumClick = 1; // to know if you have selected a preoccupied square
+            
+            }
+        }
         public static void Move()
-        { }
+        {
+            x = Convert.ToInt32(PositionOne.Substring(0, 1));
+            y = Convert.ToInt32(PositionOne.Substring(1, 1));
+            int new_x = Convert.ToInt32(PositionTwo.Substring(0, 1));
+            int new_y = Convert.ToInt32(PositionTwo.Substring(1, 1));
+            // @01:33 in vod ending in "1044"
+
+        }
     }
 }
