@@ -66,6 +66,7 @@ namespace Chess_ai_design
             int new_x = Convert.ToInt32(PositionTwo.Substring(0, 1));
             int new_y = Convert.ToInt32(PositionTwo.Substring(1, 1));
             // @01:33 in vod ending in "1044"
+            //check
 
         }
     }
