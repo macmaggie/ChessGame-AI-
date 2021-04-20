@@ -28,6 +28,10 @@ namespace Chess_ai_design
         private void button1_Click(object sender, EventArgs e)
         {
             //Open Select form to open a note file and close the previous form
+            OpenFileDialog PickFile = new OpenFileDialog();
+            PickFile.Filter = "Text File|*.txt";
+            if (PickFile.ShowDialog() == System.Windows.Forms.DialogResult.OK) // checks if they have chosen and opened a file 
+            { }
             //open table form close select form 
             //Load game from load game code
         }

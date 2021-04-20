@@ -51,7 +51,7 @@ namespace Chess_ai_design
             else if (NumClick == 1) //moing click if the squares choosen are valid
             {
                 Program.PositionTwo = Location;//get the square you want to move to
-                Program
+                Program;
                     //----@ 2:23 in Vod ending in "1044"----//
             }
         }
@@ -63,7 +63,7 @@ namespace Chess_ai_design
             NameSave.Show();// open namesave form
             //somewhow get the var from namesaveform OR put the rest of this code into the NameSave snippet
             NameSave.Close();//close namesave form
-            Program.Compress(ref Contents, Chesspieces);
+            Program.Compress(ref Contents, ChessPieces);
             Program.SaveFile(Contents, Name);
             TableForm.close();//closes the Table form once it's saved
         }
