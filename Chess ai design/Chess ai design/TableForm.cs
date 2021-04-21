@@ -15,8 +15,8 @@ namespace Chess_ai_design
         public int NumClick = 0;
         public Button[,] ChessBoard = new Button[8, 8];
         public ChessPiece[,] ChessPieces = new ChessPiece[8, 8];
-        //public List<ChessPiece>[] DeafeatedWhite = new List<ChessPiece>[16];
-        //public List<ChessPiece>[] DeafeatedBlack = new List<ChessPiece>[16];
+        public List<ChessPiece>[] DeafeatedWhite = new List<ChessPiece>[16];
+        public List<ChessPiece>[] DeafeatedBlack = new List<ChessPiece>[16];
         public TableForm()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Chess_ai_design
                     BoardPanel.Controls.Add(ChessBoard[x, y]);
                 }
             }
-            //Program.Decompress(Contents, ref ChessPieces, ref ChessBoard);//Loads objects + pictures
+            Program.Decompress(Contents, ref ChessPieces, ref ChessBoard);//Loads objects + pictures
         }
         public void ClickButton(Object sender, System.EventArgs e)
         {
@@ -51,11 +51,20 @@ namespace Chess_ai_design
             else if (NumClick == 1) //moing click if the squares choosen are valid
             {
                 Program.PositionTwo = Location;//get the square you want to move to
-                Program;
-                    //----@ 2:23 in Vod ending in "1044"----//
+                Program.Move(ref ChessPieces, ref ChessBoard, ref NumClick, ref DeafeatedWhite, ref DeafeatedBlack);
+                UpdateDefeatedList();
+                for (int x = 0; x < 8; x++)
+                {
+                    for (int y = 0; y < 8; y++)
+                    {
+                        ChessBoard[x, y].BackColor = Color.Transparent;//removes the visable moveable colour 
+                    }
+                }
+                NumClick = 0;//sets back t9o select button
+                    
             }
         }
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e) //button to savefile
         {
             string Contents = null;
             string Name = null;
@@ -65,7 +74,7 @@ namespace Chess_ai_design
             NameSave.Close();//close namesave form
             Program.Compress(ref Contents, ChessPieces);
             Program.SaveFile(Contents, Name);
-            TableForm.close();//closes the Table form once it's saved
+            //TableForm.Close();//closes the Table form once it's saved
         }
         public void UpdateDefeatedList()
         { }
