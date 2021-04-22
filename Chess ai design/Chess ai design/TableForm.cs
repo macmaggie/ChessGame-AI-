@@ -15,8 +15,8 @@ namespace Chess_ai_design
         public int NumClick = 0;
         public Button[,] ChessBoard = new Button[8, 8];
         public ChessPiece[,] ChessPieces = new ChessPiece[8, 8];
-        public List<ChessPiece>[] DeafeatedWhite = new List<ChessPiece>[16];
-        public List<ChessPiece>[] DeafeatedBlack = new List<ChessPiece>[16];
+        public List<ChessPiece>[] DefeatedWhite = new List<ChessPiece>[16];
+        public List<ChessPiece>[] DefeatedBlack = new List<ChessPiece>[16];
         public TableForm()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Chess_ai_design
             else if (NumClick == 1) //moing click if the squares choosen are valid
             {
                 Program.PositionTwo = Location;//get the square you want to move to
-                Program.Move(ref ChessPieces, ref ChessBoard, ref NumClick, ref DeafeatedWhite, ref DeafeatedBlack);
+                Program.Move(ref ChessPieces, ref ChessBoard, ref NumClick, ref DefeatedWhite, ref DefeatedBlack);
                 UpdateDefeatedList();
                 for (int x = 0; x < 8; x++)
                 {
@@ -77,6 +77,60 @@ namespace Chess_ai_design
             //TableForm.Close();//closes the Table form once it's saved
         }
         public void UpdateDefeatedList()
-        { }
+        {
+            WhiteList.Controls.Clear();
+            BlackList.Controls.Clear();
+            //clears buttons from panels
+            int i = 0; //counter
+            foreach (ChessPiece dead in DefeatedWhite)//white defeated pieces panel
+            {
+                Button WhiteObject = new System.Windows.Forms.Button(); //sets button dimentions and positioning on the panel
+                WhiteObject.Width = 50;
+                WhiteObject.Height = 50;
+                if (i < 8)
+                {
+                    WhiteObject.Left = 0;
+                    WhiteObject.Top = i * 50;
+                }
+                else 
+                {
+                    WhiteObject.Left = 50;
+                    WhiteObject.Top = (i - 8) * 50;
+                }
+                //end of setting button
+                //setting the defeated peice's picture and aesthetics
+                WhiteObject.BackgroundImage = Image.FromFile(DefeatedWhite[i].ColorPiece());
+                WhiteObject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                WhiteObject.FlatStyle = FlatStyle.Flat;
+                WhiteObject.BackColor = System.Drawing.Color.Transparent;
+                WhiteList.Controls.Add(WhiteObject);//add the button to the panel for white
+                i = i + 1;
+            }
+            i = 0;
+            foreach (ChessPiece dead in DefeatedBlack)//white defeated pieces panel
+            {
+                Button BlackObject = new System.Windows.Forms.Button(); //sets button dimentions and positioning on the panel
+                BlackObject.Width = 50;
+                BlackObject.Height = 50;
+                if (i < 8)
+                {
+                    BlackObject.Left = 0;
+                    BlackObject.Top = i * 50;
+                }
+                else
+                {
+                    BlackObject.Left = 50;
+                    BlackObject.Top = (i - 8) * 50;
+                }
+                //end of setting button
+                //setting the defeated peice's picture and aesthetics
+                BlackObject.BackgroundImage = Image.FromFile(DefeatedWhite[i].ColorPiece());
+                BlackObject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                BlackObject.FlatStyle = FlatStyle.Flat;
+                BlackObject.BackColor = System.Drawing.Color.Transparent;
+                BlackList.Controls.Add(BlackObject);//add the button to the panel for white
+                i = i + 1;
+            }
+        }
     }
 }

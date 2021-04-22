@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableForm));
             this.BoardPanel = new System.Windows.Forms.Panel();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.BlackList = new System.Windows.Forms.Panel();
+            this.WhiteList = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // BoardPanel
@@ -52,12 +54,30 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
+            // BlackList
+            // 
+            this.BlackList.BackColor = System.Drawing.Color.Peru;
+            this.BlackList.Location = new System.Drawing.Point(78, 12);
+            this.BlackList.Name = "BlackList";
+            this.BlackList.Size = new System.Drawing.Size(100, 400);
+            this.BlackList.TabIndex = 1;
+            // 
+            // WhiteList
+            // 
+            this.WhiteList.BackColor = System.Drawing.Color.Peru;
+            this.WhiteList.Location = new System.Drawing.Point(619, 12);
+            this.WhiteList.Name = "WhiteList";
+            this.WhiteList.Size = new System.Drawing.Size(100, 400);
+            this.WhiteList.TabIndex = 2;
+            // 
             // TableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.WhiteList);
+            this.Controls.Add(this.BlackList);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.BoardPanel);
             this.Name = "TableForm";
@@ -70,5 +90,7 @@
 
         private System.Windows.Forms.Panel BoardPanel;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Panel BlackList;
+        private System.Windows.Forms.Panel WhiteList;
     }
 }
