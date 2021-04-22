@@ -83,7 +83,7 @@ namespace Chess_ai_design
             
             }
         }
-        public static void Move(ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, ref int NumClick, ref List<ChessPiece>[] DefeatedWhite, ref List<ChessPiece>[] DefeatedBlack)
+        public static void Move(ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, ref int NumClick, ref List<ChessPiece> DefeatedWhite, ref List<ChessPiece> DefeatedBlack)
         {
             x = Convert.ToInt32(PositionOne.Substring(0, 1));
             y = Convert.ToInt32(PositionOne.Substring(1, 1));
@@ -110,7 +110,7 @@ namespace Chess_ai_design
                 int change = new_y - y;
                 ChessPieces[new_x, new_y].AddMoveNum(change, ref ChessPieces, ref ChessBoard, new_x, new_y);
                 //this checks how far forward a piece is, this is very important for pawns to change them into a different piece at the end of the board
-                ChessBoard[new_x, new_y].BackgroundImage = Image.FromFile(ChessPieces[new_x, new_y].Contents());
+                ChessBoard[new_x, new_y].BackgroundImage = Image.FromFile(ChessPieces[new_x, new_y].ColorPiece());
                 //set the background for the new position into the piece put there
 
             }

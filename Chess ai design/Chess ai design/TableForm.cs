@@ -15,8 +15,8 @@ namespace Chess_ai_design
         public int NumClick = 0;
         public Button[,] ChessBoard = new Button[8, 8];
         public ChessPiece[,] ChessPieces = new ChessPiece[8, 8];
-        public List<ChessPiece>[] DefeatedWhite = new List<ChessPiece>[16];
-        public List<ChessPiece>[] DefeatedBlack = new List<ChessPiece>[16];
+        public List<ChessPiece> DefeatedWhite = new List<ChessPiece>();
+        public List<ChessPiece> DefeatedBlack = new List<ChessPiece>();
         public TableForm()
         {
             InitializeComponent();
