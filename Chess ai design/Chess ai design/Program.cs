@@ -39,8 +39,31 @@ namespace Chess_ai_design
         public static void SaveFile()
         { }
 
-        public static void LoadPieces()
+        public static void LoadPieces(string Contents, ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, ref int n, ref int x, ref int y)
         {
+            string colour;
+            string name;
+            for (int r = 0; r < Convert.ToInt32(Contents.Substring(n, 1)); r++)
+            {
+                colour = Contents.Substring(n + 1, 1);
+                switch (Contents.Substring(n + 2, 1))
+                {
+                    case "P":
+                        name = "P";
+                        ChessPieces[x, y] = new Pawn(name, colour);
+                        break;
+                    case "C":
+                        break;
+                    case "H":
+                        break;
+                    case "B":
+                        break;
+                    case "Q":
+                        break;
+                    case "K":
+                        break;
+                }
+            }
             //ChessBoard[x, y].BackgroundImageLayout = System.Windows.ImageLayout.Stretch;
         
         }
