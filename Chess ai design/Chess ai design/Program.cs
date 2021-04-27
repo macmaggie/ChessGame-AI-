@@ -30,13 +30,13 @@ namespace Chess_ai_design
                     n++;
                     x = 0;
                 }
-                //LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
+                LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
                 n = n + 3;
             }  
         }
-        public static void Compress()
+        public static void Compress(ref string Contents, ChessPiece[,] ChessPieces)
         { }
-        public static void SaveFile()
+        public static void SaveFile(string Contents, string Name)
         { }
 
         public static void LoadPieces(string Contents, ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, ref int n, ref int x, ref int y)
