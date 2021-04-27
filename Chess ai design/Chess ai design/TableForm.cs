@@ -60,7 +60,7 @@ namespace Chess_ai_design
                         ChessBoard[x, y].BackColor = Color.Transparent;//removes the visable moveable colour 
                     }
                 }
-                NumClick = 0;//sets back t9o select button
+                NumClick = 0;//sets back to select a button/piece
                     
             }
         }
