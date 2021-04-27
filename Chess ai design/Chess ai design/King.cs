@@ -32,9 +32,9 @@ namespace Chess_ai_design
         public override string ColorPiece()
         {
             if (Colour == "W")
-            { PieceImage = @""; }//--file name--///
+            { PieceImage = @"\\pfa.education\utccstudentusers$\17U-MMaciak\Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\White King.png"; }//--file name--///
             if (Colour == "B")
-            { PieceImage = @""; }//--file name--///
+            { PieceImage = @"\\pfa.education\utccstudentusers$\17U-MMaciak\Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\Black King.png"; }//--file name--///
             return PieceImage;
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)

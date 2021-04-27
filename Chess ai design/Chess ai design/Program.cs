@@ -30,7 +30,7 @@ namespace Chess_ai_design
                     n++;
                     x = 0;
                 }
-                //LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
+                LoadPieces(Contents, ref ChessPieces, ref ChessBoard, ref n, ref x, ref y);
                 n = n + 3;
             }  
         }
@@ -53,18 +53,39 @@ namespace Chess_ai_design
                         ChessPieces[x, y] = new Pawn(name, colour);
                         break;
                     case "C":
+                        name = "C";
+                        ChessPieces[x, y] = new Castle(name, colour);
                         break;
                     case "H":
+                        name = "H";
+                        ChessPieces[x, y] = new Horse(name, colour);
                         break;
                     case "B":
+                        name = "B";
+                        ChessPieces[x, y] = new Bishop(name, colour);
                         break;
                     case "Q":
+                        name = "Q";
+                        ChessPieces[x, y] = new Queen(name, colour);
                         break;
                     case "K":
+                        name = "K";
+                        ChessPieces[x, y] = new King(name, colour);
+                        break;
+                    case "-":
                         break;
                 }
+                if (ChessPieces[x,y] is object)//sets the objects picture, it checks if the object exists prior
+                {
+                    //ChessBoard[x, y].Text = ChessPieces[x, y].GetData();//--- this will be useful when saving 
+                    ChessBoard[x, y].BackgroundImage = Image.FromFile(ChessPieces[x, y].ColorPiece());
+                }
+                ChessBoard[x, y].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                ChessBoard[x, y].FlatStyle = FlatStyle.Flat;
+                ChessBoard[x, y].BackColor = System.Drawing.Color.Transparent; //turns buttons transparent
+                x = x + 1;
             }
-            //ChessBoard[x, y].BackgroundImageLayout = System.Windows.ImageLayout.Stretch;
+            //unveil the compressed line into an array
         
         }
         //these are set public because the "show moves" subroutine isnt connected with the "moves" subroutine. They are accessed by clicking a button

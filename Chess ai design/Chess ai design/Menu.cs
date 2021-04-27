@@ -19,8 +19,10 @@ namespace Chess_ai_design
 
         private void NewGButton_Click(object sender, EventArgs e)
         {
+            string Contents = "1WC1WH1WB1WQ1WK1WB1WH1WC:8wP:8--:8--:8--:8--:8BP:1BC1BH1BB1BQ1BK1BB1BH1BC";
             var tableform = new TableForm();
             tableform.Show();
+            tableform.AddButtons(Contents);
             //open Table form and close the previous form
             //load from the new game code 
         }
