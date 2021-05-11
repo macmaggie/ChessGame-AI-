@@ -47,6 +47,7 @@ namespace Chess_ai_design
 
         private void Exit_Click(object sender, EventArgs e)
         {
+            
             //Exits and closes the code
         }
     }
