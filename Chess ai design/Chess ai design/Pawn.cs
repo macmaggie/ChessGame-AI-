@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Chess_ai_design
 {
@@ -38,7 +39,19 @@ namespace Chess_ai_design
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)
         {
-
+            if (ChessPieces[x, y + 1] == null)
+            { 
+                ChessBoard[x, y + 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x + 1, y + 1] != null)
+            {
+                ChessBoard[x+1, y + 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x - 1, y + 1] != null)
+            {
+                ChessBoard[x - 1, y + 1].BackColor = Color.Red;
+            }
+            //add al pasunt here check if the pawn next to it has move num 1 if yes then it can take that piece overwise it cannot
         }
     }
 }
