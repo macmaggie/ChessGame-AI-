@@ -31,9 +31,9 @@ namespace Chess_ai_design
         public override string ColorPiece()
         {
             if (Colour == "W")
-            { PieceImage = @"Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\White Bishop"; }//--file name--///
+            { PieceImage = @"E:\CAST\Nea Project\ChessGame AI (Github)\Chess Pieces\White Bishop.png"; }//--file name--///
             if (Colour == "B")
-            { PieceImage = @"Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\Black Bishop"; }//--file name--///
+            { PieceImage = @"E:\CAST\Nea Project\ChessGame AI (Github)\Chess Pieces\Black Bishop.png"; }//--file name--///
             return PieceImage;
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)

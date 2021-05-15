@@ -77,7 +77,7 @@ namespace Chess_ai_design
                     case "-":
                         break;
                 }
-                if (ChessPieces[x,y] is object)//sets the objects picture, it checks if the object exists prior
+                if (ChessPieces[x , y] != null)//sets the objects picture, it checks if the object exists prior
                 {
                     //ChessBoard[x, y].Text = ChessPieces[x, y].GetData();//--- this will be useful when saving 
                     ChessBoard[x, y].BackgroundImage = Image.FromFile(ChessPieces[x, y].ColorPiece());

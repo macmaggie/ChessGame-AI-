@@ -32,24 +32,43 @@ namespace Chess_ai_design
         public override string ColorPiece()
         {
             if (Colour == "W")
-            { PieceImage = @"Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\White Pawn"; }//--file name--///
+            { PieceImage = @"E:\CAST\Nea Project\ChessGame AI (Github)\Chess Pieces\White Pawn.png"; }//--file name--///
             if (Colour == "B")
-            { PieceImage = @"Desktop\Chess Game Ai\ChessGame-AI-\Chess Pieces\Black Pawn"; }//--file name--///
+            { PieceImage = @"E:\CAST\Nea Project\ChessGame AI (Github)\Chess Pieces\Black Pawn.png"; }//--file name--///
             return PieceImage;
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)
         {
-            if (ChessPieces[x, y + 1] == null)
-            { 
-                ChessBoard[x, y + 1].BackColor = Color.Red;
-            }
-            if (ChessPieces[x + 1, y + 1] != null)
+            
+            if (Colour == "W")
             {
-                ChessBoard[x+1, y + 1].BackColor = Color.Red;
+                if (ChessPieces[x, y + 1] == null)
+                { 
+                    ChessBoard[x, y + 1].BackColor = Color.Red;
+                }
+                if (x<7 && ChessPieces[x + 1, y + 1] != null && ChessPieces[x + 1, y + 1].GetData() != this.Colour)
+                {
+                    ChessBoard[x+1, y + 1].BackColor = Color.Red;
+                }
+                if (x>0 && ChessPieces[x - 1, y + 1] != null && ChessPieces[x + 1, y + 1].GetData() != this.Colour)
+                {
+                    ChessBoard[x - 1, y + 1].BackColor = Color.Red;
+                }
             }
-            if (ChessPieces[x - 1, y + 1] != null)
+            else if (Colour == "B")
             {
-                ChessBoard[x - 1, y + 1].BackColor = Color.Red;
+                if (ChessPieces[x, y - 1] == null)
+                { 
+                    ChessBoard[x, y - 1].BackColor = Color.Red;
+                }
+                if (x<7 && ChessPieces[x + 1, y - 1] != null && ChessPieces[x + 1, y - 1].GetData() != this.Colour)
+                {
+                    ChessBoard[x + 1, y - 1].BackColor = Color.Red;
+                }
+                if (x>0 && ChessPieces[x - 1, y - 1] != null && ChessPieces[x - 1, y - 1].GetData() != this.Colour)
+                {
+                    ChessBoard[x - 1, y - 1].BackColor = Color.Red;
+                }
             }
             //add al pasunt here check if the pawn next to it has move num 1 if yes then it can take that piece overwise it cannot
         }
