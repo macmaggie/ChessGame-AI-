@@ -39,6 +39,46 @@ namespace Chess_ai_design
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)
         {
+            if(ChessPieces[x+2,y+1].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x+2, y + 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x+2, y-1].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x+2, y - 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x+1, y+2].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x+1, y + 2].BackColor = Color.Red;
+            }
+            if (ChessPieces[x-1, y+2].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x-1, y + 2].BackColor = Color.Red;
+            }
+            if (ChessPieces[x-2, y+1].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x-2, y + 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x-2, y-1].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x-2, y - 1].BackColor = Color.Red;
+            }
+            if (ChessPieces[x+1, y-2].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x+1, y -2].BackColor = Color.Red;
+            }
+            if (ChessPieces[x-1, y-2].GetData() != Colour)
+            {
+                //add exceptions
+                ChessBoard[x -1, y - 2].BackColor = Color.Red;
+            }
 
         }
     }
