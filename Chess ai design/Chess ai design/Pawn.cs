@@ -13,6 +13,7 @@ namespace Chess_ai_design
         public string Name;
         public string PieceImage;
         public string Colour;
+        public int MoveNum = 0;
 
         public Pawn(string name, string colour)
         {
@@ -28,7 +29,23 @@ namespace Chess_ai_design
             return Name;
         }
         public override void AddMoveNum(int change, ref ChessPiece[,] ChessPieces, ref Button[,] ChessBoard, int new_x, int new_y)
-        { }
+        {
+            if (change == 2)
+            { 
+                MoveNum = MoveNum + 2; 
+            }
+            else 
+            {
+                MoveNum = MoveNum + 1;
+            }
+            if (MoveNum == 5)
+            {
+                string name = "Q";
+                string colour = Colour;
+                ChessPieces[new_x, new_y] = new Queen(name, colour);
+                ChessBoard[new_x, new_y].BackgroundImage = Image.FromFile(ChessPieces[new_x, new_y].ColorPiece());
+            }
+        }
         public override string ColorPiece()
         {
             if (Colour == "W")
@@ -46,6 +63,10 @@ namespace Chess_ai_design
                 { 
                     ChessBoard[x, y + 1].BackColor = Color.Red;
                 }
+                if (MoveNum == 0 && ChessPieces[x, y + 2] == null)
+                {
+                    ChessBoard[x, y + 2].BackColor = Color.Red;
+                }
                 if (x<7 && ChessPieces[x + 1, y + 1] != null && ChessPieces[x + 1, y + 1].GetData() != this.Colour)
                 {
                     ChessBoard[x+1, y + 1].BackColor = Color.Red;
@@ -60,6 +81,10 @@ namespace Chess_ai_design
                 if (ChessPieces[x, y - 1] == null)
                 { 
                     ChessBoard[x, y - 1].BackColor = Color.Red;
+                }
+                if (MoveNum == 0 && ChessPieces[x, y - 2] == null)
+                {
+                    ChessBoard[x, y - 2].BackColor = Color.Red;
                 }
                 if (x<7 && ChessPieces[x + 1, y - 1] != null && ChessPieces[x + 1, y - 1].GetData() != this.Colour)
                 {
