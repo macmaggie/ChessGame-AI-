@@ -39,44 +39,36 @@ namespace Chess_ai_design
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)
         {
-            if(ChessPieces[x+2,y+1].GetData() != Colour && x<=5)
+            if(x<=5 && y<=6 && (ChessPieces[x + 2, y + 1] == null || ChessPieces[x + 2, y + 1].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x+2, y + 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+2, y-1].GetData() != Colour && x<=5)
+            if (x <= 5 && y >= 1 && (ChessPieces[x + 2, y - 1] == null || ChessPieces[x+2, y-1].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x+2, y - 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+1, y+2].GetData() != Colour && x<=6 && y<=5)
+            if (x<=6 && y<=5 && (ChessPieces[x + 1, y + 2] == null || ChessPieces[x+1, y+2].GetData() != Colour ))
             {
-                //add exceptions
                 ChessBoard[x+1, y + 2].BackColor = Color.Red;
             }
-            if (ChessPieces[x-1, y+2].GetData() != Colour && y <= 5)
+            if (x>=1 && y <= 5 && (ChessPieces[x - 1, y + 2]==null||ChessPieces[x-1, y+2].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x-1, y + 2].BackColor = Color.Red;
             }
-            if (ChessPieces[x-2, y+1].GetData() != Colour)
+            if (x>=2 && y <= 6 &&(ChessPieces[x - 2, y + 1] ==null || ChessPieces[x-2, y+1].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x-2, y + 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x-2, y-1].GetData() != Colour)
+            if (x>=2 && y>=1 && (ChessPieces[x - 2, y - 1] == null || ChessPieces[x-2, y-1].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x-2, y - 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+1, y-2].GetData() != Colour && x<=6)
+            if (x <= 6 && y >= 2 && (ChessPieces[x + 1, y - 2] == null || ChessPieces[x+1, y-2].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x+1, y -2].BackColor = Color.Red;
             }
-            if (ChessPieces[x-1, y-2].GetData() != Colour)
+            if (x>=1 && y>=2 && (ChessPieces[x - 1, y - 2] == null || ChessPieces[x-1, y-2].GetData() != Colour))
             {
-                //add exceptions
                 ChessBoard[x -1, y - 2].BackColor = Color.Red;
             }
 
