@@ -39,22 +39,22 @@ namespace Chess_ai_design
         }
         public override void ColorButton(ref int x, ref int y, ref Button[,] ChessBoard, ref ChessPiece[,] ChessPieces)
         {
-            if(ChessPieces[x+2,y+1].GetData() != Colour)
+            if(ChessPieces[x+2,y+1].GetData() != Colour && x<=5)
             {
                 //add exceptions
                 ChessBoard[x+2, y + 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+2, y-1].GetData() != Colour)
+            if (ChessPieces[x+2, y-1].GetData() != Colour && x<=5)
             {
                 //add exceptions
                 ChessBoard[x+2, y - 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+1, y+2].GetData() != Colour)
+            if (ChessPieces[x+1, y+2].GetData() != Colour && x<=6 && y<=5)
             {
                 //add exceptions
                 ChessBoard[x+1, y + 2].BackColor = Color.Red;
             }
-            if (ChessPieces[x-1, y+2].GetData() != Colour)
+            if (ChessPieces[x-1, y+2].GetData() != Colour && y <= 5)
             {
                 //add exceptions
                 ChessBoard[x-1, y + 2].BackColor = Color.Red;
@@ -69,7 +69,7 @@ namespace Chess_ai_design
                 //add exceptions
                 ChessBoard[x-2, y - 1].BackColor = Color.Red;
             }
-            if (ChessPieces[x+1, y-2].GetData() != Colour)
+            if (ChessPieces[x+1, y-2].GetData() != Colour && x<=6)
             {
                 //add exceptions
                 ChessBoard[x+1, y -2].BackColor = Color.Red;
