@@ -124,7 +124,7 @@ namespace Chess_ai_design
                 }
                 //end of setting button
                 //setting the defeated peice's picture and aesthetics
-                BlackObject.BackgroundImage = Image.FromFile(DefeatedWhite[i].ColorPiece());
+                BlackObject.BackgroundImage = Image.FromFile(DefeatedBlack[i].ColorPiece());
                 BlackObject.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 BlackObject.FlatStyle = FlatStyle.Flat;
                 BlackObject.BackColor = System.Drawing.Color.Transparent;
